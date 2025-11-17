@@ -1,12 +1,14 @@
 lista = [1,1,1,2,3,3,4,4,5,5,6,6]
 
 
+
 chave = 3
 
 
 def buscaBinaria(lista, chave):
     pos_ini = 0
     pos_fim = len(lista) - 1
+    resultado = -1 
     while pos_ini <= pos_fim:
         pos_meio = (pos_ini + pos_fim) // 2
         if lista[pos_meio] == chave:
@@ -15,7 +17,7 @@ def buscaBinaria(lista, chave):
         elif lista[pos_meio] < chave:
              pos_ini = pos_meio + 1
         else: 
-            pos_ini = pos_meio -1
+            pos_fim = pos_meio -1
     return resultado
 
 
@@ -26,4 +28,5 @@ if busca != -1:
 
 else:
     print(f'O numero {chave} nao foi encontrado')
+
     
